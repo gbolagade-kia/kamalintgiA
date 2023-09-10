@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KamalintgiA's profile</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .super-div{
+            display: flex;
+        }
+        #first-div{
+            margin-top: -10px;
+            /* padding-right: 585px; */
+            padding-top: -30px;
+            display: inline-block;
+        }
+        .kamal{
+            height: 700px;
+            padding-bottom: -10px;
+            width: 756px;
+            position: relative;
+            margin-left: -10px;
+            margin-bottom: -10px;
+        }
+        .text-container{
+            position: absolute;
+            top: 27px;
+            padding-left: 20px;
+        }
+        #second-div{
+            background-color: cadetblue;
+            float: right;
+            width: 576px;
+            margin-top: -10px;
+            margin-right: -10px;
+            text-align: center;
+            color: white;
+        }
+        .child{
+            display: inline-block;
+        }
+        #pic2{
+             border-radius: 50%;
+             margin-top: 10px;
+             border: 2px solid black;
+        }
+        #about-p{
+            padding-left: 20px;
+            padding-right: 20px;
+            color: black;
+        }
+        span{
+            color: black;
+        }
+        #day-id{
+            color: white;
+        }
+        .date{
+          display: flex;
+          margin-left: 3px;
+          margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="child" id ="super-div">
+        <div id="first-div">
+            <img data-testid="slackDisplayImage" class="kamal" src="Kamal2.jfif" alt="KamalintgiA">
+            <div class="text-container">
+                <h1 data-testid="slackUserName">KamalintgiA</h1>
+                <h2><b>I'm a Frontend Developer...|</h2>
+            </div>
+        </div>
+        <div class="child" id="second-div">
+            <img data-testid="slackDisplayImage" id="pic2" src="Kamal2.jfif" height="100px" width="100px" alt="KamalintgiA">
+            <div class="date">
+               <h2 data-testid="currentDayOfTheName" id="day-id"></h2>
+               <h2>, &nbsp;</h2>
+               <h2 data-testid="currentUTCTime" id="time-id">,ss</h2>
+             </div>
+            <h1 data-testid="slackUserName" style="color: black; padding-top: 10px;">KamalintgiA</h1>
+            <h2>About Me</h2>
+            <p id="about-p">I am a Frontend Web developer. I am probably the most passionate programmer you will ever get to work with. If you have a great project that require amazing skills. I am  your guy</p>
+            <h2><u>Details</u></h2>
+            <h3>Name : <br><span>Kamaldeen Adekunle Gbolagade</span>     
+            </h3>
+            <h3 data-testid="myTrack">Track: <br> <span>Frontend</span>  
+            </h3>
+            <h3>Phone No: <br> <span>+2349036154339</span>  
+            </h3>
+            <h3>Instagram : <br> <span>kamalintgia</span>     
+            </h3>
+            <h3>Email : <br> <span>gbolagadekamaldeen@gmail.com</span>     
+            </h3>
+        </div>
+    </div>
+    <script>
+        let today = new Date();
+        let day = today.getDay();
+        let hr = today.getUTCHours();
+        let min = today.getUTCMinutes();
+        let sec = today.getUTCSeconds();
+        let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let currentDay = dayList[day];
+        let kam = document.getElementById("day-id");
+        let kamal = document.getElementById("time-id");
+        
+        kam.innerHTML =  currentDay;
+        kamal.innerHTML = hr +":" + min + ":"+ sec;
+        if(hr > 12){
+            hr = hr - 12;
+            kamal.innerHTML = hr +":" + min + ":"+ sec;
+            kamal.innerHTML += "PM";
+        }
+        else{
+            kamal.innerHTML = hr +":" + min + ":"+ sec;
+            kamal.innerHTML += "AM";
+        }
+        console.log(currentDay)
+        
+    </script>
+</body>
+</html>
